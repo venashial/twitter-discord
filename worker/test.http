@@ -1,0 +1,11 @@
+### Create webhook
+POST http://localhost:8787/webhook
+Content-Type: application/json
+
+{
+  "url": "https://google.com",
+  "twitter": "modrinth"
+}
+
+### Try scan
+GET http://localhost:8787/scan

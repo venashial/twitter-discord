@@ -1,16 +1,10 @@
-name = "" # TODO
-workers_dev = true
+name = "twitter-discord"
 
-compatibility_date = "2022-05-03"
+compatibility_date = "2022-05-11"
 
-#
-# NOTE: You will need to use `wrangler secret put JWT_SECRET <value>
-# @see https://developers.cloudflare.com/workers/wrangler/commands/#secret
-#
-# [secrets]
-# JWT_SECRET = "value"
+kv_namespaces = [
+    { binding = "DATA", id = "8b94b515a72846f9b24b2f4425e4dd14", preview_id = "b5311a2a9ff34aa793ab7e6287a45821" }
+]
 
-[[kv_namespaces]]
-binding = "DATABASE"
-preview_id = "<preview namespaceid>" # TODO
-id = "<prod namespaceid>" # TODO
+[triggers]
+crons = ["30 * * * *"]
