@@ -25,9 +25,18 @@ API.add('POST', '/webhook', async (req, context) => {
     }
 
     const url = input.url.trim();
+    const username = input.twitter.trim()
+
+    const response = await fetch(`https://api.twitter.com/2/users/by/username/${username}`, {
+        headers: {
+            Authorization: `Bearer ${context.bindings.TWITTER_BEARER_TOKEN}`,
+        }
+    })
+    const { data } = await response.json()
 
     const value: Webhook = {
-        twitter: input.twitter.trim(),
+        twitterID: data.id,
+        twitterUsername: username,
         failedAttempts: 0,
     };
 

@@ -1,16 +1,23 @@
 {
   "name": "twitter-discord",
   "version": "0.0.1",
+  "main": "workers/twitter-discord/index.ts",
   "scripts": {
-    "dev": "wrangler dev src/index.ts --local",
-    "deploy": "wrangler publish src/index.ts"
+    "build": "cfw build",
+    "build:watch": "chokidar \"workers/**/*.ts\" -c \"pnpm build\"",
+    "preview": "miniflare build/twitter-discord/index.js --watch --kv-persist --modules --build-command 'pnpm cfw build'",
+    "dev": "concurrently \"npm:build:watch\" \"npm:preview\"",
+    "deploy": "wrangler publish workers/twitter-discord/index.ts"
   },
   "devDependencies": {
+    "cfw": "^0.3.0",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^7.1.0",
+    "miniflare": "^2.4.0",
     "wrangler": "^2.0.2"
   },
   "type": "module",
   "dependencies": {
-    "fast-xml-parser": "^4.0.7",
     "worktop": "^0.8.0-next.14"
   }
 }

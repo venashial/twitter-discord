@@ -17,6 +17,8 @@
 		"checkJs": true,
 		"noEmit": true
 	},
-	"include": ["@types", "src"],
+	"include": ["@types",
+      "workers"
+    ],
 	"exclude": ["build", "node_modules"]
 }

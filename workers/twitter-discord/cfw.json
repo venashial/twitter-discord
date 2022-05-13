@@ -1,0 +1,5 @@
+{
+  "name": "twitter-discord",
+  "entry": "index.ts",
+  "module": true
+}

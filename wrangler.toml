@@ -2,8 +2,13 @@ name = "twitter-discord"
 
 compatibility_date = "2022-05-11"
 
+main = "build/twitter-discord/index.js"
+
+[build]
+command = "npm run build"
+
 kv_namespaces = [
-    { binding = "DATA", id = "8b94b515a72846f9b24b2f4425e4dd14", preview_id = "b5311a2a9ff34aa793ab7e6287a45821" }
+    { binding = "DATA", id = "8b94b515a72846f9b24b2f4425e4dd14" }
 ]
 
 [triggers]
