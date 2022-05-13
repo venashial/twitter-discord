@@ -4,12 +4,12 @@ compatibility_date = "2022-05-11"
 
 main = "build/twitter-discord/index.js"
 
+kv_namespaces = [
+    { binding = "DATA", id = "953d3bc5fd1f4f0cbdbc97a996c7ca86" }
+]
+
 [build]
 command = "npm run build"
-
-kv_namespaces = [
-    { binding = "DATA", id = "8b94b515a72846f9b24b2f4425e4dd14" }
-]
 
 [triggers]
 crons = ["*/5 * * * *"]

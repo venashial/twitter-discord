@@ -5,9 +5,9 @@
   "scripts": {
     "build": "cfw build",
     "build:watch": "chokidar \"workers/**/*.ts\" -c \"pnpm build\"",
-    "preview": "miniflare build/twitter-discord/index.js --watch --kv-persist --modules --build-command 'pnpm cfw build'",
+    "preview": "miniflare build/twitter-discord/index.js --watch --kv DATA --kv-persist --modules --build-command 'pnpm cfw build'",
     "dev": "concurrently \"npm:build:watch\" \"npm:preview\"",
-    "deploy": "wrangler publish workers/twitter-discord/index.ts"
+    "deploy": "wrangler publish"
   },
   "devDependencies": {
     "cfw": "^0.3.0",
